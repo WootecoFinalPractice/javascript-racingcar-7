@@ -1,5 +1,9 @@
 import { Console } from '@woowacourse/mission-utils';
 
-class OutputView {}
+class OutputView {
+  static print(input) {
+    Console.print(input);
+  }
+}
 
 export default OutputView;

@@ -5,6 +5,7 @@ class Controller {
   static async run() {
     const car = await InputView.carInput();
     const time = await InputView.timeInput();
+    OutputView.print('실행 결과\n');
   }
 }
 
