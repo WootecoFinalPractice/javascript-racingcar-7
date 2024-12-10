@@ -7,14 +7,17 @@ class Controller {
   static async run() {
     const cars = await InputView.carInput();
     const car = Parser.parsingCar(cars);
-    const player = [];
+    const players = [];
     for (let i = 0; i < car.length; i += 1) {
-      player.push(new Car(car[i]));
+      players.push(new Car(car[i]));
     }
-    console.log(player);
+    console.log(players);
     const time = await InputView.timeInput();
-    // Car.race(time);
     OutputView.print('실행 결과\n');
+    for (let i = 0; i < time; i += 1) {
+      Car.race(players);
+      OutputView.printRace(players);
+    }
   }
 }
 
